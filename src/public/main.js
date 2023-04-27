@@ -1,8 +1,10 @@
-import { loadNotes, onNewNote } from "./socket.js";
-import { appendNote, onHandleSubmit, renderNotes } from "./ui.js";
+import { loadNotes, onNewNote, onSelected } from "./socket.js";
+import { appendNote, fillForm, onHandleSubmit, renderNotes } from "./ui.js";
 
 onNewNote(appendNote);
 loadNotes(renderNotes);
+onSelected(fillForm);
 
 const noteForm = document.querySelector("#noteForm");
 noteForm.addEventListener("submit", onHandleSubmit);
+
